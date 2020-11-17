@@ -17,6 +17,9 @@ cc_library_static {
         ":__subpackages__",
         "//hardware/interfaces/tests/extension/vibrator:__subpackages__",
     ],
+    cflags: [
+        "-Wno-unused-parameter",
+    ],
 }
 
 cc_binary {
