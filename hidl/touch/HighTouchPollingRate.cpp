@@ -16,8 +16,6 @@ namespace touch {
 namespace V1_0 {
 namespace implementation {
 
-#define HIGH_TOUCH_POLLING_PATH = "/proc/game_state"
-
 Return<bool> HighTouchPollingRate::isEnabled() {
     std::ifstream file(HIGH_TOUCH_POLLING_PATH);
     int enabled;
