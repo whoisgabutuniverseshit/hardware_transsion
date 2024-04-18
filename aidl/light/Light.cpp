@@ -80,6 +80,7 @@ static uint32_t getBrightness(const HwLightState& state) {
 }
 
 static inline uint32_t scaleBrightness(uint32_t brightness, uint32_t maxBrightness) {
+    LOG(DEBUG) << "Received brightness: " << brightness;
     if (brightness == 0) {
         return 0;
     }
@@ -93,6 +94,7 @@ static inline uint32_t getScaledBrightness(const HwLightState& state, uint32_t m
 
 static void handleBacklight(const HwLightState& state) {
     uint32_t brightness = getScaledBrightness(state, getMaxBrightness(LCD_LED MAX_BRIGHTNESS));
+    LOG(DEBUG) << "Setting brightness: " << brightness;
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
